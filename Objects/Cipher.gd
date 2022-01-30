@@ -18,12 +18,20 @@ onready var particles = $CPUParticles2D
 func _ready():
 	var rng = RandomNumberGenerator.new()
 	rng.randomize()
-	if caesar: shift_cipher(rng.randi_range(5, 20), text)
 	rng.randomize()
-	if rail_fence: initialize_railfence(rng.randi_range(3, min(len(text) / 2, 12)))
-	particles.emission_rect_extents = Vector2((40 * len(text)) / 2, 1)
-	particles.position = Vector2((40 * len(text)) / 2, 43)
-	particles.amount = 20 * len(text)
+	var rails = 1
+	if rail_fence:
+		label.text = text
+		rails = rng.randi_range(3, min(len(text) / 2, 12))
+		initialize_railfence(rails)
+	if caesar:
+		var use_text = text
+		if rail_fence: use_text = label.text
+		shift_cipher(rng.randi_range(5, 20), use_text)
+	if (len(text) > 8):
+		label.theme.get_font("SupermercadoOne", "DynamicFont").size = 72 / (len(text) / 8)
+	particles.emission_rect_extents = Vector2(get_viewport_rect().size.x, 1)
+	particles.position = Vector2(0, 0)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -34,7 +42,7 @@ func shift_cipher(amount, new_text = ''):
 	if (check_cipher()): return
 	if (!new_text): new_text = label.text
 	for i in len(new_text):
-		if (new_text[i] == '_'): continue
+		if (new_text[i] == '_' or new_text[i] == '\n'): continue
 		var curr_alphabet_index = alphabet.find(new_text[i])
 		var new_alphabet_index = curr_alphabet_index + amount
 		if (new_alphabet_index) > (len(alphabet)-1): new_alphabet_index -= (len(alphabet))
@@ -43,7 +51,7 @@ func shift_cipher(amount, new_text = ''):
 	label.text = new_text
 	
 func check_cipher():
-	if ((rail_fence and (get_string_from_rails() == text)) or label.text == text):
+	if ((rail_fence and (get_diagonal_string_from_rails() == text)) or label.text == text):
 			particles.set_emitting(true)
 			return true
 		
@@ -80,14 +88,46 @@ func get_string_from_rails(rail_fence_cipher = ""):
 		if (rail_fence_cipher[i] != '_' and rail_fence_cipher[i] != '\n'): string_text += rail_fence_cipher[i]
 	return string_text
 	
-func shift_rail_fences(amount):
+func get_diagonal_string_from_rails():
+	var cipher_array = label.text.split('\n')
+	
 	var rails = 0
 	for i in len(label.text):
 		if (label.text[i] == '\n'):
 			rails += 1
-	print(rails)
+	rails += 1
+	
+	var result = ""
+	
+	var down = false
+	var row = 0
+	var col = 0
+	
+	for i in len(text):
+		if (row == 0):
+			down = true
+		elif (row == rails - 1):
+			down = false
+			
+		if (cipher_array[row][col] != '*' and cipher_array[row][col] != '\n'):
+			result += cipher_array[row][col]
+			col += 1
+			
+		
+		if down and row < rails - 1: row += 1
+		elif !down and row > 0: row -= 1
+
+	print(result)
+	return result
+		
+	
+func shift_rail_fences(amount):
+	if (check_cipher()): return
+	var rails = 0
+	for i in len(label.text):
+		if (label.text[i] == '\n'):
+			rails += 1
 	rails += 1 + amount
-	print(rails)
 	if (rails > min(len(text) / 2, 12) + 3 or rails < 1): return
 	var cipher_text = get_string_from_rails()
 	var cipher_array = []
