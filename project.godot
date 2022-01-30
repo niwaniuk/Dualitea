@@ -23,6 +23,10 @@ _global_script_class_icons={
 config/name="Dualitea"
 config/icon="res://icon.png"
 
+[autoload]
+
+Global="*res://Global.gd"
+
 [input]
 
 walk_right={

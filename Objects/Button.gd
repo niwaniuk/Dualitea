@@ -13,8 +13,8 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if Input.is_action_just_pressed("select"):
+	if !Global.is_textbox_visible(self) and Input.is_action_just_pressed("select"):
 		var overlap = get_overlapping_bodies()
 		for body in overlap:
 			if body is Player:
-				print("owo")
+				print('bloop')
