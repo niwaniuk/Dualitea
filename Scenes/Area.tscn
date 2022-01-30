@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=2]
+[gd_scene load_steps=39 format=2]
 
 [ext_resource path="res://Graphics/debug/tilesheet.png" type="Texture" id=1]
 [ext_resource path="res://Objects/Player.tscn" type="PackedScene" id=2]
@@ -7,6 +7,8 @@
 [ext_resource path="res://Objects/TextboxTrigger.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Objects/UpButton.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Objects/DownButton.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Objects/RemoveRowButton.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Objects/AddRowButton.tscn" type="PackedScene" id=9]
 
 [sub_resource type="ConvexPolygonShape2D" id=2]
 points = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
@@ -289,27 +291,36 @@ points = PoolVector2Array( 0, 0, 64, 0, 0, 64, 0, 0 )
 [node name="TextBox" parent="." instance=ExtResource( 4 )]
 
 [node name="TileMap" type="TileMap" parent="."]
+position = Vector2( -1, 0 )
 tile_set = SubResource( 1 )
 format = 1
-tile_data = PoolIntArray( 327682, 0, 1, 327683, 0, 2, 327684, 0, 2, 327685, 0, 2, 327686, 0, 2, 327687, 0, 2, 327688, 0, 2, 327689, 0, 2, 327690, 0, 3, 393218, 0, 0, 393219, 0, 65536, 393220, 0, 0, 393221, 0, 65536, 393222, 0, 0, 393223, 0, 65536, 393224, 0, 0, 393225, 0, 65536, 393226, 0, 0 )
+tile_data = PoolIntArray( 196610, 0, 2, 196611, 0, 2, 327682, 0, 1, 327683, 0, 2, 327684, 0, 2, 327685, 0, 2, 327686, 0, 2, 327687, 0, 2, 327688, 0, 2, 327689, 0, 2, 327690, 0, 3, 393218, 0, 0, 393219, 0, 65536, 393220, 0, 0, 393221, 0, 65536, 393222, 0, 0, 393223, 0, 65536, 393224, 0, 0, 393225, 0, 65536, 393226, 0, 0 )
 
 [node name="UpButton" parent="." instance=ExtResource( 6 )]
-position = Vector2( 311, 296 )
+position = Vector2( 246, 288 )
 
 [node name="DownButton" parent="." instance=ExtResource( 7 )]
-position = Vector2( 530, 290 )
+position = Vector2( 332, 288 )
 
 [node name="Cipher" parent="." instance=ExtResource( 3 )]
 margin_left = 345.0
 margin_top = 106.0
 margin_right = 477.0
 margin_bottom = 193.0
-text = "lukewarm"
+text = "oxidation"
+caesar = false
+rail_fence = true
 
 [node name="TextboxTrigger" parent="." instance=ExtResource( 5 )]
 position = Vector2( 178, 293 )
 text_queue = [ "This is text one.", "This is text two.", "This is text three." ]
 on_button_press = true
+
+[node name="AddRowButton" parent="." instance=ExtResource( 9 )]
+position = Vector2( 562, 281 )
+
+[node name="RemoveRowButton" parent="." instance=ExtResource( 8 )]
+position = Vector2( 652, 282 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( 417, 288 )
