@@ -29,7 +29,11 @@ func trigger_textbox():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if !Global.is_textbox_visible(self) and monitoring and Input.is_action_just_pressed("select"):
-		trigger_textbox()
+		var overlap = get_overlapping_bodies()
+		for body in overlap:
+			if body is Player:
+				trigger_textbox()
+				break
 
 
 func _on_Area2D_body_entered(body):

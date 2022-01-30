@@ -17,4 +17,12 @@ func _process(delta):
 		var overlap = get_overlapping_bodies()
 		for body in overlap:
 			if body is Player:
-				print('bloop')
+				var cipher
+				var game = get_parent()
+				if game and game.has_node("Cipher"):  cipher = game.get_node("Cipher")
+				if (cipher):
+					cipher.shift_cipher(-1)
+					cipher.check_cipher()
+				break
+
+

@@ -20,7 +20,7 @@ func _ready():
 	hide_textbox()
 
 func hide_textbox():
-	end_symbol.text = ''
+	end_symbol.hide()
 	text.text = ''
 	textbox_container.hide()
 	emit_signal('textbox_closed')
@@ -34,7 +34,7 @@ func queue_text(next_text):
 func display_text():
 	var next_text = text_queue.pop_front()
 	if (next_text):
-		end_symbol.text = ''
+		end_symbol.hide()
 		text.percent_visible = 0.0
 		show_textbox()
 		text.text = next_text
@@ -43,7 +43,7 @@ func display_text():
 		$Tween.start()
 	
 func end_textbox():
-	end_symbol.text = "v"
+	end_symbol.show()
 	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

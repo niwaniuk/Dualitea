@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Objects/TextBox.gd" type="Script" id=1]
+[ext_resource path="res://Graphics/triangle.png" type="Texture" id=2]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0, 0, 0, 1 )
@@ -13,6 +14,32 @@ corner_radius_top_left = 10
 corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
+
+[sub_resource type="DynamicFontData" id=2]
+antialiased = false
+font_path = "res://Graphics/SupermercadoOne-Regular.ttf"
+
+[sub_resource type="DynamicFont" id=3]
+size = 36
+font_data = SubResource( 2 )
+
+[sub_resource type="AtlasTexture" id=4]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 0, 0, 20, 20 )
+
+[sub_resource type="AtlasTexture" id=5]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 0, 20, 20, 20 )
+
+[sub_resource type="SpriteFrames" id=6]
+animations = [ {
+"frames": [ SubResource( 4 ), SubResource( 5 ) ],
+"loop": true,
+"name": "default",
+"speed": 2.5
+} ]
 
 [node name="TextBox" type="CanvasLayer"]
 script = ExtResource( 1 )
@@ -49,24 +76,23 @@ margin_right = 964.0
 margin_bottom = 120.0
 
 [node name="Text" type="Label" parent="TextboxContainer/MarginContainer/HBoxContainer"]
-margin_right = 933.0
+margin_right = 944.0
 margin_bottom = 100.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-text = "Placeholder textPlaceholder textPlaceholder textPlaceholder textPlaceholder textPlaceholder textPlaceholder textPlaceholder textPlaceholder textPlaceholder textPlaceholder textPlaceholder textPlaceholder textPlaceholder textPlaceholder textPlaceholder textPlaceholder textPlaceholder textPlaceholder textPlaceholder textPlaceholder textPlaceholder textPlaceholder textPlaceholder textPlaceholder textPlaceholder textPlaceholder textPlaceholder textPlaceholder textPlaceholder textPlaceholder textPlaceholder textPlaceholder textPlaceholder textPlaceholder textPlaceholder textPlaceholder textPlaceholder textPlaceholder textPlaceholder textPlaceholder textPlaceholder textPlaceholder textPlaceholder textPlaceholder textPlaceholder textPlaceholder textPlaceholder textPlaceholder textPlaceholder textPlaceholder textPlaceholder textPlaceholder textPlaceholder textPlaceholder textPlaceholder textPlaceholder textPlaceholder textPlaceholder textPlaceholder textPlaceholder text"
+custom_fonts/font = SubResource( 3 )
+text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut at suscipit augue. Donec id condimentum nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Nulla et congue justo, eu posuere mauris. Aliquam sed tempor tellus, nec facilisis lectus."
 autowrap = true
 clip_text = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="EndSymbol" type="Label" parent="TextboxContainer/MarginContainer/HBoxContainer"]
-margin_left = 937.0
-margin_top = 86.0
-margin_right = 944.0
-margin_bottom = 100.0
-size_flags_vertical = 8
-text = "v"
+[node name="EndSymbol" type="AnimatedSprite" parent="TextboxContainer/MarginContainer/HBoxContainer"]
+position = Vector2( 936, 93 )
+frames = SubResource( 6 )
+frame = 1
+playing = true
 
 [node name="Tween" type="Tween" parent="."]
 

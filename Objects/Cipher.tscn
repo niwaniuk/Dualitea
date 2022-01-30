@@ -1,0 +1,61 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Objects/Cipher.gd" type="Script" id=1]
+
+[sub_resource type="DynamicFontData" id=1]
+antialiased = false
+font_path = "res://Graphics/SupermercadoOne-Regular.ttf"
+
+[sub_resource type="DynamicFont" id=2]
+size = 72
+font_data = SubResource( 1 )
+
+[node name="Cipher" type="MarginContainer"]
+margin_right = 132.0
+margin_bottom = 87.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+position = Vector2( 69, 46 )
+emitting = false
+amount = 50
+lifetime = 0.5
+one_shot = true
+emission_shape = 2
+emission_rect_extents = Vector2( 66, 1 )
+direction = Vector2( 0, 0 )
+spread = 180.0
+gravity = Vector2( 0, 100 )
+initial_velocity = 100.0
+initial_velocity_random = 0.07
+angular_velocity = 100.0
+angular_velocity_random = 0.09
+damping = 44.83
+scale_amount = 3.0
+scale_amount_random = 1.0
+hue_variation = 1.0
+hue_variation_random = 1.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+margin_right = 132.0
+margin_bottom = 87.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+alignment = 1
+
+[node name="Label" type="Label" parent="HBoxContainer"]
+margin_right = 132.0
+margin_bottom = 87.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = SubResource( 2 )
+text = "test"
+align = 1
+valign = 1
