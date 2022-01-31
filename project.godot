@@ -21,11 +21,16 @@ _global_script_class_icons={
 [application]
 
 config/name="Dualitea"
+run/main_scene="res://Scenes/Main Menu.tscn"
 config/icon="res://icon.png"
 
 [autoload]
 
 Global="*res://Global.gd"
+
+[display]
+
+window/size/height=800
 
 [input]
 
@@ -65,3 +70,7 @@ quality/driver/driver_name="GLES2"
 vram_compression/import_etc=true
 vram_compression/import_etc2=false
 environment/default_environment="res://default_env.tres"
+
+[world]
+
+2d/cell_size=32

@@ -1,0 +1,55 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Scenes/Credits.gd" type="Script" id=1]
+[ext_resource path="res://Graphics/SupermercadoOne-Regular.ttf" type="DynamicFontData" id=2]
+
+[sub_resource type="DynamicFontData" id=5]
+font_path = "res://Graphics/SupermercadoOne-Regular.ttf"
+
+[sub_resource type="DynamicFont" id=6]
+size = 50
+font_data = SubResource( 5 )
+
+[sub_resource type="DynamicFont" id=7]
+size = 45
+font_data = ExtResource( 2 )
+
+[sub_resource type="Theme" id=8]
+default_font = SubResource( 7 )
+
+[node name="Credits" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_pivot_offset = Vector2( -589, -20 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Back" type="Button" parent="."]
+margin_left = 366.0
+margin_top = 633.0
+margin_right = 665.0
+margin_bottom = 712.0
+rect_pivot_offset = Vector2( 236, 55 )
+custom_fonts/font = SubResource( 6 )
+text = "Go Back"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+margin_left = 321.0
+margin_top = 48.0
+margin_right = 702.0
+margin_bottom = 567.0
+theme = SubResource( 8 )
+text = "Programmers:
+    * Natalie Iwaniuk
+	    * Shashank Bhat
+Artist
+    * Zoe Snyder
+Writer
+    * Shashank Bhat
+Special Thanks
+    * Omer Ahmed"

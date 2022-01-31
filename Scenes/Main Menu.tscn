@@ -1,4 +1,6 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Scenes/Main Menu.gd" type="Script" id=1]
 
 [sub_resource type="DynamicFontData" id=1]
 font_path = "res://Graphics/SupermercadoOne-Regular.ttf"
@@ -14,20 +16,21 @@ font_path = "res://Graphics/SupermercadoOne-Regular.ttf"
 size = 30
 font_data = SubResource( 3 )
 
-[sub_resource type="DynamicFontData" id=5]
+[sub_resource type="DynamicFontData" id=7]
 font_path = "res://Graphics/SupermercadoOne-Regular.ttf"
 
 [sub_resource type="DynamicFont" id=6]
 size = 50
-font_data = SubResource( 5 )
+font_data = SubResource( 7 )
 
 [node name="Main Menu" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -2.0
-margin_top = 4.0
-margin_right = -2.0
-margin_bottom = 4.0
+margin_left = 2.0
+margin_top = 2.0
+margin_right = 2.0
+margin_bottom = 2.0
+script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -56,20 +59,20 @@ __meta__ = {
 
 [node name="Start" type="Button" parent="."]
 margin_left = 371.0
-margin_top = 285.0
+margin_top = 312.0
 margin_right = 670.0
-margin_bottom = 364.0
+margin_bottom = 391.0
 custom_fonts/font = SubResource( 6 )
 text = "Start Game"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Credits2" type="Button" parent="."]
+[node name="Credits" type="Button" parent="."]
 margin_left = 371.0
-margin_top = 378.0
+margin_top = 439.0
 margin_right = 670.0
-margin_bottom = 457.0
+margin_bottom = 518.0
 rect_pivot_offset = Vector2( 236, 55 )
 custom_fonts/font = SubResource( 6 )
 text = "Credits"
@@ -77,11 +80,11 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Credits" type="Button" parent="."]
+[node name="Exit" type="Button" parent="."]
 margin_left = 372.0
-margin_top = 471.0
+margin_top = 563.0
 margin_right = 671.0
-margin_bottom = 550.0
+margin_bottom = 642.0
 rect_pivot_offset = Vector2( 236, 55 )
 custom_fonts/font = SubResource( 6 )
 text = "Exit Game"

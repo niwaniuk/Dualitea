@@ -53,7 +53,13 @@ func shift_cipher(amount, new_text = ''):
 func check_cipher():
 	if ((rail_fence and (get_diagonal_string_from_rails() == text)) or label.text == text):
 			particles.set_emitting(true)
+			get_parent().get_node("TileMap").set_cell(31, 13,-1)
 			return true
+			
+func set_cipher():
+	rail_fence = false
+	text = label.text
+	particles.set_emitting(true)
 		
 func initialize_railfence(rails):
 	var cipher_array = []

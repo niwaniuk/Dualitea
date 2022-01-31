@@ -44,7 +44,7 @@ hue_variation = 1.0
 hue_variation_random = 1.0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
-margin_right = 132.0
+margin_right = 624.0
 margin_bottom = 87.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -53,11 +53,11 @@ size_flags_vertical = 3
 alignment = 1
 
 [node name="Label" type="Label" parent="HBoxContainer"]
-margin_right = 132.0
+margin_right = 624.0
 margin_bottom = 87.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme = SubResource( 3 )
-text = "test"
+text = "oversteeped duality"
 align = 1
 valign = 1

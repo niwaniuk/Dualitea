@@ -1,0 +1,325 @@
+[gd_scene load_steps=21 format=2]
+
+[ext_resource path="res://Objects/Cipher.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Objects/TextBox.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Objects/Player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Objects/DownButton.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Objects/TextboxTrigger.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Objects/UpButton.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Objects/RemoveRowButton.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Objects/AddRowButton.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Graphics/TeaSet.png" type="Texture" id=9]
+[ext_resource path="res://Objects/AreaTransition.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Scenes/Start.gd" type="Script" id=11]
+
+[sub_resource type="ConvexPolygonShape2D" id=36]
+points = PoolVector2Array( 32, 64, 0, 64, 0, 32, 32, 32 )
+
+[sub_resource type="ConvexPolygonShape2D" id=37]
+points = PoolVector2Array( 32, 64, 0, 64, 0, 32, 32, 32 )
+
+[sub_resource type="ConvexPolygonShape2D" id=38]
+points = PoolVector2Array( 32, 32, 0, 32, 0, 0, 32, 0 )
+
+[sub_resource type="ConvexPolygonShape2D" id=39]
+points = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
+
+[sub_resource type="ConvexPolygonShape2D" id=40]
+points = PoolVector2Array( 160, 64, 0, 64, 0, 0, 160, 0 )
+
+[sub_resource type="TileSet" id=32]
+0/name = "TeaSet.png 0"
+0/texture = ExtResource( 9 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 0, 0, 32, 32 )
+0/tile_mode = 0
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape_one_way = false
+0/shape_one_way_margin = 0.0
+0/shapes = [  ]
+0/z_index = 0
+4/name = "TeaSet.png 4"
+4/texture = ExtResource( 9 )
+4/tex_offset = Vector2( 0, 0 )
+4/modulate = Color( 1, 1, 1, 1 )
+4/region = Rect2( 288, 128, 160, 96 )
+4/tile_mode = 0
+4/occluder_offset = Vector2( 0, 0 )
+4/navigation_offset = Vector2( 0, 0 )
+4/shape_offset = Vector2( 0, 0 )
+4/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+4/shape_one_way = false
+4/shape_one_way_margin = 0.0
+4/shapes = [  ]
+4/z_index = 0
+5/name = "TeaSet.png 5"
+5/texture = ExtResource( 9 )
+5/tex_offset = Vector2( 0, 0 )
+5/modulate = Color( 1, 1, 1, 1 )
+5/region = Rect2( 0, 32, 128, 192 )
+5/tile_mode = 0
+5/occluder_offset = Vector2( 0, 0 )
+5/navigation_offset = Vector2( 0, 0 )
+5/shape_offset = Vector2( 0, 0 )
+5/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+5/shape_one_way = false
+5/shape_one_way_margin = 0.0
+5/shapes = [  ]
+5/z_index = 0
+6/name = "TeaSet.png 6"
+6/texture = ExtResource( 9 )
+6/tex_offset = Vector2( 0, 0 )
+6/modulate = Color( 1, 1, 1, 1 )
+6/region = Rect2( 0, 224, 64, 64 )
+6/tile_mode = 0
+6/occluder_offset = Vector2( 0, 0 )
+6/navigation_offset = Vector2( 0, 0 )
+6/shape_offset = Vector2( 0, 0 )
+6/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+6/shape = SubResource( 39 )
+6/shape_one_way = false
+6/shape_one_way_margin = 1.0
+6/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 39 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+6/z_index = 0
+7/name = "TeaSet.png 7"
+7/texture = ExtResource( 9 )
+7/tex_offset = Vector2( 0, 0 )
+7/modulate = Color( 1, 1, 1, 1 )
+7/region = Rect2( 544, 64, 96, 160 )
+7/tile_mode = 0
+7/occluder_offset = Vector2( 0, 0 )
+7/navigation_offset = Vector2( 0, 0 )
+7/shape_offset = Vector2( 0, 0 )
+7/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+7/shape_one_way = false
+7/shape_one_way_margin = 0.0
+7/shapes = [  ]
+7/z_index = 0
+8/name = "TeaSet.png 8"
+8/texture = ExtResource( 9 )
+8/tex_offset = Vector2( 0, 0 )
+8/modulate = Color( 1, 1, 1, 1 )
+8/region = Rect2( 672, 160, 160, 64 )
+8/tile_mode = 0
+8/occluder_offset = Vector2( 0, 0 )
+8/navigation_offset = Vector2( 0, 0 )
+8/shape_offset = Vector2( 0, 0 )
+8/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+8/shape = SubResource( 40 )
+8/shape_one_way = false
+8/shape_one_way_margin = 1.0
+8/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 40 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+8/z_index = 0
+9/name = "TeaSet.png 9"
+9/texture = ExtResource( 9 )
+9/tex_offset = Vector2( 0, 0 )
+9/modulate = Color( 1, 1, 1, 1 )
+9/region = Rect2( 736, 96, 32, 32 )
+9/tile_mode = 0
+9/occluder_offset = Vector2( 0, 0 )
+9/navigation_offset = Vector2( 0, 0 )
+9/shape_offset = Vector2( 0, 0 )
+9/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+9/shape_one_way = false
+9/shape_one_way_margin = 0.0
+9/shapes = [  ]
+9/z_index = 0
+10/name = "TeaSet.png 10"
+10/texture = ExtResource( 9 )
+10/tex_offset = Vector2( 0, 0 )
+10/modulate = Color( 1, 1, 1, 1 )
+10/region = Rect2( 736, 224, 32, 64 )
+10/tile_mode = 0
+10/occluder_offset = Vector2( 0, 0 )
+10/navigation_offset = Vector2( 0, 0 )
+10/shape_offset = Vector2( 0, 0 )
+10/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+10/shape = SubResource( 36 )
+10/shape_one_way = false
+10/shape_one_way_margin = 1.0
+10/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 36 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+10/z_index = 0
+11/name = "TeaSet.png 11"
+11/texture = ExtResource( 9 )
+11/tex_offset = Vector2( 0, 0 )
+11/modulate = Color( 1, 1, 1, 1 )
+11/region = Rect2( 800, 224, 32, 64 )
+11/tile_mode = 0
+11/occluder_offset = Vector2( 0, 0 )
+11/navigation_offset = Vector2( 0, 0 )
+11/shape_offset = Vector2( 0, 0 )
+11/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+11/shape = SubResource( 37 )
+11/shape_one_way = false
+11/shape_one_way_margin = 1.0
+11/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 37 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+11/z_index = 0
+12/name = "TeaSet.png 12"
+12/texture = ExtResource( 9 )
+12/tex_offset = Vector2( 0, 0 )
+12/modulate = Color( 1, 1, 1, 1 )
+12/region = Rect2( 864, 64, 96, 160 )
+12/tile_mode = 0
+12/occluder_offset = Vector2( 0, 0 )
+12/navigation_offset = Vector2( 0, 0 )
+12/shape_offset = Vector2( 0, 0 )
+12/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+12/shape_one_way = false
+12/shape_one_way_margin = 0.0
+12/shapes = [  ]
+12/z_index = 0
+13/name = "TeaSet.png 13"
+13/texture = ExtResource( 9 )
+13/tex_offset = Vector2( 0, 0 )
+13/modulate = Color( 1, 1, 1, 1 )
+13/region = Rect2( 160, 32, 128, 192 )
+13/tile_mode = 0
+13/occluder_offset = Vector2( 0, 0 )
+13/navigation_offset = Vector2( 0, 0 )
+13/shape_offset = Vector2( 0, 0 )
+13/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+13/shape_one_way = false
+13/shape_one_way_margin = 0.0
+13/shapes = [  ]
+13/z_index = 0
+14/name = "TeaSet.png 14"
+14/texture = ExtResource( 9 )
+14/tex_offset = Vector2( 0, 0 )
+14/modulate = Color( 1, 1, 1, 1 )
+14/region = Rect2( 96, 256, 32, 32 )
+14/tile_mode = 0
+14/occluder_offset = Vector2( 0, 0 )
+14/navigation_offset = Vector2( 0, 0 )
+14/shape_offset = Vector2( 0, 0 )
+14/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+14/shape = SubResource( 38 )
+14/shape_one_way = false
+14/shape_one_way_margin = 1.0
+14/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 38 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+14/z_index = 0
+15/name = "TeaSet.png 15"
+15/texture = ExtResource( 9 )
+15/tex_offset = Vector2( 0, 0 )
+15/modulate = Color( 1, 1, 1, 1 )
+15/region = Rect2( 128, 32, 32, 96 )
+15/tile_mode = 0
+15/occluder_offset = Vector2( 0, 0 )
+15/navigation_offset = Vector2( 0, 0 )
+15/shape_offset = Vector2( 0, 0 )
+15/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+15/shape_one_way = false
+15/shape_one_way_margin = 0.0
+15/shapes = [  ]
+15/z_index = 0
+16/name = "TeaSet.png 16"
+16/texture = ExtResource( 9 )
+16/tex_offset = Vector2( 0, 0 )
+16/modulate = Color( 1, 1, 1, 1 )
+16/region = Rect2( 448, 0, 64, 288 )
+16/tile_mode = 0
+16/occluder_offset = Vector2( 0, 0 )
+16/navigation_offset = Vector2( 0, 0 )
+16/shape_offset = Vector2( 0, 0 )
+16/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+16/shape_one_way = false
+16/shape_one_way_margin = 0.0
+16/shapes = [  ]
+16/z_index = 0
+
+[sub_resource type="DynamicFontData" id=33]
+font_path = "res://Graphics/SupermercadoOne-Regular.ttf"
+
+[sub_resource type="DynamicFont" id=31]
+size = 72
+font_data = SubResource( 33 )
+
+[sub_resource type="Theme" id=34]
+default_font = SubResource( 31 )
+
+[node name="Start" type="Node2D"]
+script = ExtResource( 11 )
+
+[node name="TextBox" parent="." instance=ExtResource( 2 )]
+
+[node name="TileMap" type="TileMap" parent="."]
+position = Vector2( -1, 0 )
+tile_set = SubResource( 32 )
+cell_size = Vector2( 32, 32 )
+format = 1
+tile_data = PoolIntArray( 0, 14, 0, 1, 14, 0, 2, 14, 0, 3, 14, 0, 4, 14, 0, 5, 14, 0, 6, 14, 0, 7, 14, 0, 8, 14, 0, 9, 14, 0, 10, 14, 0, 11, 14, 0, 12, 14, 0, 13, 14, 0, 14, 14, 0, 15, 14, 0, 16, 14, 0, 17, 14, 0, 18, 14, 0, 19, 14, 0, 20, 14, 0, 21, 14, 0, 22, 14, 0, 23, 14, 0, 24, 14, 0, 25, 14, 0, 26, 14, 0, 27, 14, 0, 28, 14, 0, 29, 14, 0, 30, 14, 0, 31, 14, 0, 65536, 14, 0, 65537, 14, 0, 65538, 14, 0, 65539, 14, 0, 65540, 14, 0, 65541, 14, 0, 65542, 14, 0, 65543, 14, 0, 65544, 14, 0, 65545, 14, 0, 65546, 14, 0, 65547, 14, 0, 65548, 14, 0, 65549, 14, 0, 65550, 14, 0, 65551, 14, 0, 65552, 14, 0, 65553, 14, 0, 65554, 14, 0, 65555, 14, 0, 65556, 14, 0, 65557, 14, 0, 65558, 14, 0, 65559, 14, 0, 65560, 14, 0, 65561, 14, 0, 65562, 14, 0, 65563, 14, 0, 65564, 14, 0, 65565, 14, 0, 65566, 14, 0, 65567, 14, 0, 196607, 14, 0, 131072, 14, 0, 131073, 16, 0, 131074, 16, 0, 131075, 16, 0, 131077, 16, 0, 131078, 16, 0, 131079, 16, 0, 131080, 16, 0, 131081, 16, 0, 131082, 16, 0, 131083, 16, 0, 131085, 16, 0, 131086, 16, 0, 131087, 16, 0, 131088, 16, 0, 131089, 16, 0, 131090, 16, 0, 131091, 16, 0, 131092, 16, 0, 131094, 16, 0, 131095, 16, 0, 131096, 16, 0, 131097, 16, 0, 131098, 16, 0, 131099, 16, 0, 131100, 16, 0, 131102, 16, 0, 131103, 14, 0, 262143, 14, 0, 196608, 14, 0, 196639, 14, 0, 327679, 14, 0, 262144, 14, 0, 262175, 14, 0, 393215, 14, 0, 327680, 14, 0, 327711, 14, 0, 458751, 14, 0, 393216, 14, 0, 393247, 14, 0, 524287, 14, 0, 458752, 14, 0, 458783, 14, 0, 589823, 14, 0, 524288, 14, 0, 524319, 14, 0, 655359, 14, 0, 589824, 14, 0, 589825, 0, 0, 589826, 0, 0, 589827, 0, 0, 589828, 0, 0, 589829, 0, 0, 589830, 0, 0, 589831, 0, 0, 589832, 0, 0, 589833, 0, 0, 589834, 0, 0, 589835, 0, 0, 589836, 0, 0, 589837, 0, 0, 589838, 0, 0, 589839, 0, 0, 589840, 0, 0, 589841, 0, 0, 589842, 0, 0, 589843, 0, 0, 589844, 0, 0, 589845, 0, 0, 589846, 0, 0, 589847, 0, 0, 589848, 0, 0, 589849, 0, 0, 589850, 0, 0, 589851, 0, 0, 589852, 0, 0, 589853, 0, 0, 589854, 0, 0, 589855, 14, 0, 720895, 14, 0, 655360, 14, 0, 655361, 0, 0, 655362, 0, 0, 655363, 0, 0, 655364, 0, 0, 655365, 0, 0, 655366, 0, 0, 655367, 0, 0, 655368, 0, 0, 655369, 0, 0, 655370, 0, 0, 655371, 0, 0, 655372, 0, 0, 655373, 0, 0, 655374, 0, 0, 655375, 0, 0, 655376, 0, 0, 655377, 0, 0, 655378, 0, 0, 655379, 0, 0, 655380, 0, 0, 655381, 0, 0, 655382, 0, 0, 655383, 0, 0, 655384, 0, 0, 655385, 0, 0, 655386, 0, 0, 655387, 0, 0, 655388, 0, 0, 655389, 0, 0, 655390, 0, 0, 655391, 14, 0, 786431, 14, 0, 720896, 14, 0, 720897, 0, 0, 720898, 0, 0, 720899, 0, 0, 720900, 0, 0, 720901, 0, 0, 720902, 0, 0, 720903, 0, 0, 720904, 0, 0, 720905, 0, 0, 720906, 0, 0, 720907, 0, 0, 720908, 0, 0, 720909, 0, 0, 720910, 0, 0, 720911, 0, 0, 720912, 0, 0, 720913, 0, 0, 720914, 0, 0, 720915, 0, 0, 720916, 0, 0, 720917, 0, 0, 720918, 0, 0, 720919, 0, 0, 720920, 0, 0, 720921, 0, 0, 720922, 0, 0, 720923, 0, 0, 720924, 0, 0, 720925, 0, 0, 720926, 0, 0, 720927, 14, 0, 851967, 14, 0, 786432, 14, 0, 786433, 0, 0, 786434, 0, 0, 786435, 0, 0, 786436, 0, 0, 786437, 0, 0, 786438, 0, 0, 786439, 0, 0, 786440, 0, 0, 786441, 0, 0, 786442, 0, 0, 786443, 0, 0, 786444, 0, 0, 786445, 0, 0, 786446, 0, 0, 786447, 0, 0, 786448, 0, 0, 786449, 0, 0, 786450, 0, 0, 786451, 0, 0, 786452, 0, 0, 786453, 0, 0, 786454, 0, 0, 786455, 0, 0, 786456, 0, 0, 786457, 0, 0, 786458, 0, 0, 786459, 0, 0, 786460, 0, 0, 786461, 0, 0, 786462, 0, 0, 786463, 14, 0, 917503, 14, 0, 851968, 14, 0, 851969, 5, 0, 851972, 5, 0, 851976, 5, 0, 851980, 5, 0, 851984, 5, 0, 851988, 13, 0, 851992, 5, 0, 851996, 5, 0, 851999, 14, 0, 983039, 14, 0, 917504, 14, 0, 917535, 14, 0, 1048575, 14, 0, 983040, 14, 0, 983072, 14, 0, 983073, 14, 0, 1114111, 14, 0, 1048576, 14, 0, 1048577, 4, 0, 1048608, 14, 0, 1048609, 14, 0, 1179647, 14, 0, 1114112, 14, 0, 1114144, 14, 0, 1114145, 14, 0, 1245183, 14, 0, 1179648, 14, 0, 1179680, 14, 0, 1179681, 14, 0, 1245184, 6, 0, 1245186, 6, 0, 1245188, 6, 0, 1245190, 6, 0, 1245192, 6, 0, 1245194, 6, 0, 1245196, 6, 0, 1245198, 6, 0, 1245200, 6, 0, 1245202, 6, 0, 1245204, 6, 0, 1245206, 6, 0, 1245208, 6, 0, 1245210, 6, 0, 1245212, 6, 0, 1245214, 6, 0, 1310724, 14, 0, 1310729, 14, 0, 1310730, 14, 0, 1310731, 14, 0, 1310732, 14, 0, 1310733, 14, 0, 1310734, 14, 0, 1310735, 14, 0, 1310736, 14, 0, 1310737, 14, 0, 1310738, 14, 0, 1310739, 14, 0, 1310740, 14, 0, 1310741, 14, 0, 1310742, 14, 0, 1310743, 14, 0, 1310744, 14, 0, 1310745, 14, 0, 1310746, 14, 0, 1310747, 14, 0, 1310748, 14, 0, 1310749, 14, 0, 1376256, 14, 0, 1376257, 14, 0, 1376258, 14, 0, 1376259, 14, 0, 1376260, 14, 0, 1376261, 14, 0, 1376262, 14, 0, 1376263, 14, 0, 1376264, 14, 0, 1376265, 14, 0, 1376266, 14, 0, 1376267, 14, 0, 1376268, 14, 0, 1376269, 14, 0, 1376270, 14, 0, 1376271, 14, 0, 1376272, 14, 0, 1376273, 14, 0, 1376274, 14, 0, 1376275, 14, 0, 1376276, 14, 0, 1376277, 14, 0, 1376278, 14, 0, 1376279, 14, 0, 1376280, 14, 0, 1376281, 14, 0, 1376282, 14, 0, 1376283, 14, 0, 1376284, 14, 0, 1376285, 14, 0, 1376286, 14, 0, 1376287, 14, 0, 1441792, 14, 0, 1441793, 14, 0, 1441794, 14, 0, 1441795, 14, 0, 1441796, 14, 0, 1441797, 14, 0, 1441798, 14, 0, 1441799, 14, 0, 1441800, 14, 0, 1441801, 14, 0, 1441802, 14, 0, 1441803, 14, 0, 1441804, 14, 0, 1441805, 14, 0, 1441806, 14, 0, 1441807, 14, 0, 1441808, 14, 0, 1441809, 14, 0, 1441810, 14, 0, 1441811, 14, 0, 1441812, 14, 0, 1441813, 14, 0, 1441814, 14, 0, 1441815, 14, 0, 1441816, 14, 0, 1441817, 14, 0, 1441818, 14, 0, 1441819, 14, 0, 1441820, 14, 0, 1441821, 14, 0, 1441822, 14, 0, 1441823, 14, 0, 1507328, 14, 0, 1507329, 14, 0, 1507330, 14, 0, 1507331, 14, 0, 1507332, 14, 0, 1507333, 14, 0, 1507334, 14, 0, 1507335, 14, 0, 1507336, 14, 0, 1507337, 14, 0, 1507338, 14, 0, 1507339, 14, 0, 1507340, 14, 0, 1507341, 14, 0, 1507342, 14, 0, 1507343, 14, 0, 1507344, 14, 0, 1507345, 14, 0, 1507346, 14, 0, 1507347, 14, 0, 1507348, 14, 0, 1507349, 14, 0, 1507350, 14, 0, 1507351, 14, 0, 1507352, 14, 0, 1507353, 14, 0, 1507354, 14, 0, 1507355, 14, 0, 1507356, 14, 0, 1507357, 14, 0, 1507358, 14, 0, 1507359, 14, 0, 1572864, 14, 0, 1572865, 14, 0, 1572866, 14, 0, 1572867, 14, 0, 1572868, 14, 0, 1572869, 14, 0, 1572870, 14, 0, 1572871, 14, 0, 1572872, 14, 0, 1572873, 14, 0, 1572874, 14, 0, 1572875, 14, 0, 1572876, 14, 0, 1572877, 14, 0, 1572878, 14, 0, 1572879, 14, 0, 1572880, 14, 0, 1572881, 14, 0, 1572882, 14, 0, 1572883, 14, 0, 1572884, 14, 0, 1572885, 14, 0, 1572886, 14, 0, 1572887, 14, 0, 1572888, 14, 0, 1572889, 14, 0, 1572890, 14, 0, 1572891, 14, 0, 1572892, 14, 0, 1572893, 14, 0, 1572894, 14, 0, 1572895, 14, 0 )
+
+[node name="UpButton" parent="." instance=ExtResource( 6 )]
+visible = false
+position = Vector2( 246, 288 )
+
+[node name="DownButton" parent="." instance=ExtResource( 4 )]
+visible = false
+position = Vector2( 332, 288 )
+
+[node name="Cipher" parent="." instance=ExtResource( 1 )]
+visible = false
+margin_left = 445.0
+margin_top = 135.0
+margin_right = 577.0
+margin_bottom = 222.0
+theme = SubResource( 34 )
+text = "coffee crusader is watching"
+
+[node name="TextboxTrigger" parent="." instance=ExtResource( 5 )]
+position = Vector2( 110, 342 )
+text_queue = [ "Twas the morning of a party of great import, steeped in ache, our hero awoke.", "The faintest taste of something bitter hung upon his breath.", "He needed to brew a nice morning cup of tea, without too much depth." ]
+one_shot = true
+on_load = true
+
+[node name="AddRowButton" parent="." instance=ExtResource( 8 )]
+visible = false
+position = Vector2( 562, 281 )
+
+[node name="RemoveRowButton" parent="." instance=ExtResource( 7 )]
+visible = false
+position = Vector2( 652, 282 )
+
+[node name="AreaTransition" parent="." instance=ExtResource( 10 )]
+position = Vector2( 1018, 550 )
+next_scene = "Pantry"
+side = "r"
+
+[node name="LeftPlayer" parent="." instance=ExtResource( 3 )]
+position = Vector2( 109, 541 )
+
+[node name="RightPlayer" parent="." instance=ExtResource( 3 )]
+position = Vector2( 965, 542 )

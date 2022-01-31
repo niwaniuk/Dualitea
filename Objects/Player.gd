@@ -6,7 +6,7 @@ class_name Player
 # var a = 2
 # var b = "text"
 export (int) var speed = 500
-export (int) var jump_speed = -900
+export (int) var jump_speed = -1000
 export (int) var gravity = 2500
 
 export (float, 0, 1.0) var friction = 0.25
@@ -25,8 +25,13 @@ func _process(delta):
 		var dir = 0
 		if Input.is_action_pressed("walk_right"):
 			dir += 1
-		if Input.is_action_pressed("walk_left"):
+			$AnimatedSprite.play("walk_right")
+		elif Input.is_action_pressed("walk_left"):
 			dir -= 1
+			$AnimatedSprite.play("walk_left")
+		else: 
+			$AnimatedSprite.stop()
+			$AnimatedSprite.frame = 0
 		if dir != 0:
 			velocity.x = lerp(velocity.x, dir * speed, acceleration)
 		else:

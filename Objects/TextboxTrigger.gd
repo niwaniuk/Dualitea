@@ -8,10 +8,16 @@ extends Area2D
 export (Array) var text_queue = []
 export var one_shot :bool
 export var on_button_press :bool
+export var on_load :bool
+export var index :int = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	if (one_shot and Global.get_textbox_trigger_val(index)):
+		set_deferred("monitoring", false) 
+		return
+	if (on_load):
+		trigger_textbox()
 
 func set_text_queue(new_text_queue):
 	text_queue = new_text_queue
@@ -23,6 +29,7 @@ func trigger_textbox():
 	var textbox = Global.get_textbox(self)
 	if (textbox):
 		set_deferred("monitoring", false) 
+		Global.set_textbox_trigger_val(index, true)
 		for text in text_queue:
 			textbox.queue_text(text)	
 	
@@ -45,3 +52,4 @@ func _on_Area2D_body_entered(body):
 func _on_TextBox_textbox_closed():
 	if (!one_shot):
 		set_deferred("monitoring", true) 
+		Global.set_textbox_trigger_val(index, false)
